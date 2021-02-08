@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+.todo-container {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.task-container {
+  width: 100%;
+}
+.title {
+  padding-bottom: 2%;
+}

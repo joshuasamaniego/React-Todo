@@ -1,7 +1,10 @@
 import React from 'react';
+import ParticleComponent from "./ParticleComponent";
 
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
+
+import "./App.css";
 
 class App extends React.Component {
   constructor() {
@@ -17,6 +20,11 @@ class App extends React.Component {
         {
           task: 'Bake Cookies',
           id: 1528817084358,
+          completed: false
+        },
+        {
+          task: 'Style This App',
+          id: 1528817082319,
           completed: false
         }
       ]
@@ -57,10 +65,33 @@ class App extends React.Component {
   render() {
     console.log(this.state.todos);
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted}/>
-        <TodoForm addTodo={this.addTodo} todos={this.state.todos} clearCompleted={this.clearCompleted}/>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%"
+        }}
+        className="App"
+      >
+        <ParticleComponent />
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%"
+          }}
+          className="todo-container"
+        >
+          <h1 className="title">Welcome to your Todo App!</h1>
+          <TodoForm addTodo={this.addTodo} todos={this.state.todos} clearCompleted={this.clearCompleted}/>
+          <div className="task-container">
+            <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted}/>
+          </div>
+        </div>
       </div>
     );
   }
