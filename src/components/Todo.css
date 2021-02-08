@@ -1,0 +1,20 @@
+.todo-task-container {
+  width: 28%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-top: 1%;
+}
+.todo.line-through {
+  text-decoration: line-through;
+}
+.task {
+  padding: 2%;
+  border: 2px solid rgb(19, 19, 19);
+  border-radius: 6px;
+  background-color: rgb(100, 100, 100);
+  color: rgb(231, 229, 229);
+}
+.task:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 5px 1px black;
+}
