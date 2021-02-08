@@ -14,7 +14,7 @@ export default class TodoForm extends Component {
         })
     }
 
-    handleSubmit = (event) => {
+    handleSubmitAdd = (event) => {
         event.preventDefault();
         const newTodo = {
             task: this.state.newTask,
@@ -28,6 +28,11 @@ export default class TodoForm extends Component {
         })
     }
 
+    handleSubmitClear = (event) => {
+        event.preventDefault();
+        this.props.clearCompleted();
+    }
+
     render() {
         return (
             <div>
@@ -38,12 +43,12 @@ export default class TodoForm extends Component {
                         value={this.state.newTask} 
                         onChange={this.handleChanges}/>
                     <button 
-                        onClick={this.handleSubmit}
+                        onClick={this.handleSubmitAdd}
                     >
                         Add New Todo
                     </button>
                     <button 
-                        onClick={() => this.props.clearCompleted}
+                        onClick={this.handleSubmitClear}
                     >
                         Clear Completed
                     </button>
